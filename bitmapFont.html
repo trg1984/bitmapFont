@@ -1,89 +1,17 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bitmap Font test</title>
-		<script src = "./javascript/loadBitmapFont.js" type = "application/x-javascript" charset="UTF-8"> </script>
-		<style>
-			@media print {
-				textarea, input, hr {
-					display: none;
-				}
-				
-				body {
-					margin: 0 !important;
-				}
-				
-				.rasterText {
-					-moz-column-count:1 !important; /* Firefox */
-					-webkit-column-count:1 !important; /* Safari and Chrome */
-					column-count:1 !important;
-				}
-			}
-			
-			body {
-				margin: 46px 130px;
-			}
-			
-			h1 {
-				margin: 46px 0;
-			}
-		
-			p {
-				margin-bottom: 24px;
-			}
-		
-			.rasterText {
-				font-size: 0;
-				letter-spacing: 10px;
-				display: block;
-				margin: 0 0 46px 0;
-				
-				-moz-column-count:1; /* Firefox */
-				-webkit-column-count:1; /* Safari and Chrome */
-				column-count:1;
-				
-				-moz-column-gap:40px; /* Firefox */
-				-webkit-column-gap:40px; /* Safari and Chrome */
-				column-gap:40px;
-				
-				-moz-column-rule:2px outset #000; /* Firefox */
-				-webkit-column-rule:2px outset #000; /* Safari and Chrome */
-				column-rule:2px outset #000;
-			}
-			.rasterText ::selection
-			{
-				color: rgba(0, 0, 0, 0);
-				background-color:rgba(0, 0, 255, 0.2);
-			}
-			.rasterText ::-moz-selection
-			{
-				color: rgba(0, 0, 0, 0);
-				background-color:rgba(0, 0, 255, 0.2);
-			}
-			
-			.word {
-				display: inline-block;
-				-moz-user-select: text;
-			}
-			
-			.letter {
-				background-size: 100% 100%;
-			}
-		</style>
+		<script src="./javascript/loadBitmapFont.js" type="application/x-javascript" charset="utf-8"> </script>
+		<link rel="stylesheet" type="text/css" href="bitmapFont.css" />
 	</head>
-	<body
-		onload="loadBitmapFont('images/font32.png', 32);"
-		style="
-			text-align:justify;
-			background-color:#eee;
-			color: black;
-			font-family: 'Palatine Linotype', Serif;
-			"
-	>
-		<h1 id ="header">Bitmap font test</h1>
-		<div id="textID"></div><p/>
-		<hr />
-		<textarea id="textBox" rows="10" style="width: 100%">Type in some text to see it written using a bitmap font. The text can be selected, copied and pasted like regular text, regardless of the new format.</textarea><br/>
+	<body onload="loadBitmapFont('./images/font32.png', 32);">
+		<h1>Bitmap font test</h1>
+		<div id="textID"></div>
+		<p/>
+		<div class="hr"></div>
+		<textarea id="textBox" rows="10" style="width: 100%">Type in some text to see it written using a bitmap font. The text can be selected, copied and pasted like regular text, regardless of the new format. The page also has a print stylesheet that hides the UI components.</textarea><br/>
 		<input type="button" onclick="rasterFont(letter, 'textID', document.getElementById('textBox').value)" value="Convert"/>
 	</body>
 </html>

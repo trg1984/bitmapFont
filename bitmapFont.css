@@ -1,0 +1,76 @@
+@media print {
+	textarea, input, .hr {
+		display: none;
+	}
+	
+	body {
+		margin: 0 !important;
+	}
+	
+	.rasterText {
+		-moz-column-count:1 !important; /* Firefox */
+		-webkit-column-count:1 !important; /* Safari and Chrome */
+		column-count:1 !important;
+	}
+}
+	
+body {
+	margin: 46px 130px;
+	text-align:justify;
+	background-color:#eee;
+	color: black;
+	font-family: 'Palatine Linotype', Serif;
+}
+
+h1 {
+	margin: 46px 0;
+}
+
+p {
+	margin-bottom: 24px;
+}
+
+.rasterText {
+	font-size: 0;
+	letter-spacing: 10px;
+	display: block;
+	margin: 0 0 46px 0;
+	
+	-moz-column-count:1; /* Firefox */
+	-webkit-column-count:1; /* Safari and Chrome */
+	column-count:1;
+	
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+	
+	-moz-column-rule:2px outset #000; /* Firefox */
+	-webkit-column-rule:2px outset #000; /* Safari and Chrome */
+	column-rule:2px outset #000;
+}
+
+.rasterText ::selection {
+	color: rgba(0, 0, 0, 0);
+	background-color:rgba(0, 0, 255, 0.2);
+}
+.rasterText ::-moz-selection {
+	color: rgba(0, 0, 0, 0);
+	background-color:rgba(0, 0, 255, 0.2);
+}
+
+.word {
+	display: inline-block;
+	-moz-user-select: text;
+}
+
+.letter {
+	background-size: 100% 100%;
+}
+
+.hr {
+	border-bottom: 1px solid black;
+	height: 1px;
+	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}

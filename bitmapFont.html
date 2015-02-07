@@ -1,6 +1,7 @@
 <html>
 	<head>
-		<title>Bitmap Font -testi</title>
+		<meta charset="utf-8" />
+		<title>Bitmap Font test</title>
 		<script src = "./javascript/loadBitmapFont.js" type = "application/x-javascript"> </script>
 		<style>
 			@media print {
@@ -79,10 +80,10 @@
 			font-family: 'Palatine Linotype', Serif;
 			"
 	>
-		<h1 id ="header">Bitmap font -testi</h1>
+		<h1 id ="header">Bitmap font test</h1>
 		<div id="textID"></div><p/>
 		<hr />
-		<textarea id="teksti" rows="10" style="width: 100%">Kissa kiitoksella el‰‰, eik‰ koiraa ole karvoihin katsominen.</textarea><br/>
-		<input type="button" onclick="rasterFont(letter, 'textID', document.getElementById('teksti').value)" value="Muuta"/>
+		<textarea id="textBox" rows="10" style="width: 100%">Type in some text to see it written using a bitmap font. The text can be selected, copied and pasted like regular text, regardless of the new format.</textarea><br/>
+		<input type="button" onclick="rasterFont(letter, 'textID', document.getElementById('textBox').value)" value="Convert"/>
 	</body>
 </html>

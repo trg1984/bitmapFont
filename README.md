@@ -7,6 +7,6 @@ Currently the program assumes that concurrent letters are separate from each oth
 
 ## Usage
 
-Main code block is in loadBitmapFont.js in the javascript folder. bitmapFont.html contains the reference implementation. 
+Main code block is in loadBitmapFont.js in the javascript folder. index.html contains the reference implementation. 
 
 [Demo page](http://kulmakerroin.net/bitmapFont/)

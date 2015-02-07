@@ -1,5 +1,5 @@
 @media print {
-	textarea, input, .hr {
+	textarea, input, .hr, select, h1 {
 		display: none;
 	}
 	

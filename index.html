@@ -5,13 +5,51 @@
 		<title>Bitmap Font test</title>
 		<script src="./javascript/loadBitmapFont.js" type="application/x-javascript" charset="utf-8"> </script>
 		<link rel="stylesheet" type="text/css" href="bitmapFont.css" />
+		<script>
+			function fontChangeEvent(e) {
+				var fontSelect = document.getElementById("fontSelect");
+				var sizeSelect = document.getElementById("sizeSelect");
+				var font = fontSelect.options[fontSelect.selectedIndex].value;
+				var size = sizeSelect.options[sizeSelect.selectedIndex].value;
+				
+				var selectedItem = "";
+				if (font === 'coloredHW') selectedItem = 'font128.colored.png';
+				else if (font === 'blackHW') {
+					if (size > 128) selectedItem = 'font.png';
+					else if (size > 64) selectedItem = 'font128.png';
+					else if (size > 32) selectedItem = 'font64.png';
+					else selectedItem = 'font32.png';
+				}
+				else return /* Add your own font here. */;
+				
+				loadBitmapFont('./images/' + selectedItem, size);
+			}
+		</script>
 	</head>
-	<body onload="loadBitmapFont('./images/font32.png', 32);">
+	<body onload="fontChangeEvent()">
 		<h1>Bitmap font test</h1>
 		<div id="textID"></div>
 		<p/>
 		<div class="hr"></div>
 		<textarea id="textBox" rows="10" style="width: 100%">Type in some text to see it written using a bitmap font. The text can be selected, copied and pasted like regular text, regardless of the new format. The page also has a print stylesheet that hides the UI components.</textarea><br/>
-		<input type="button" onclick="rasterFont(letter, 'textID', document.getElementById('textBox').value)" value="Convert"/>
+		<input type="button" onclick="rasterFont(letter, 'textID', document.getElementById('textBox').value)" value="Convert" spellcheck="false" />
+		<select id="fontSelect" onchange="fontChangeEvent()">
+			<option value="blackHW" selected>Black handwriting</option>
+			<option value="coloredHW" selected>Colored handwriting</option>
+		</select>
+		<select id="sizeSelect" onchange="fontChangeEvent()">
+			<option value="32" selected>32px</option>
+			<option value="35">35px</option>
+			<option value="40">40px</option>
+			<option value="50">50px</option>
+			<option value="60">60px</option>
+			<option value="70">70px</option>
+			<option value="80">80px</option>
+			<option value="90">90px</option>
+			<option value="120">120px</option>
+			<option value="150">150px</option>
+			<option value="200">200px</option>
+			<option value="500">500px</option>
+		</select>
 	</body>
 </html>

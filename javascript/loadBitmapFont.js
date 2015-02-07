@@ -9,15 +9,16 @@ var conv = [
 ];
 
 loadBitmapFont = function(filename, height) {
+	letter = new Array();
 	var img = new Image();
 	img.done = false;
-	img.onload = function() {	
+	img.onload = function() {
 		
 		if (!img.done) {
 			
 			var scale = height / img.height;
 			// Create a new canvas for editing.
-			var canvas = document.createElement('canvas');//document.getElementById('example');
+			var canvas = document.createElement('canvas');
 			var canvas2 = document.createElement('canvas');
 			var ctx = canvas.getContext('2d');
 			var ctx2 = canvas2.getContext('2d');

@@ -9,4 +9,4 @@ Currently the program assumes that concurrent letters are separate from each oth
 
 Main code block is in loadBitmapFont.js in the javascript folder. bitmapFont.html contains the reference implementation. 
 
-[Demo page](https://rawgithub.com/trg1984/bitmapFont/master/bitmapFont.html)
+[Demo page](http://kulmakerroin.net/bitmapFont/)
